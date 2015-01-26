@@ -1,5 +1,5 @@
-### Sketch Vertical Teleporter
+### Sketch Teleporter
 
-CTRL+y moves selected layers vertically according to the cursor position.
+CTRL+y moves selected layers to the cursor position.
 
-Mashup of code written by [Andrey Shakhmin](https://github.com/turbobabr).
+Forked from ['Sketch Vertical Teleporter'](https://github.com/wolanski/sketch-vertical-teleporter) by [Gregory Wolansky](https://github.com/wolanski)

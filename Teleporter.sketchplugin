@@ -1,21 +1,21 @@
 // (control y)
 //
-// Moves selected layers vertically according to the cursor position
-//
-// Mashup of code written by Andrey Shakhmin (https://github.com/turbobabr) 
+// Moves selected layers to the cursor position
 
-function getMinY(selectedLayers) {
-    var minY;
+function getMinXY(selectedLayers) {
+    var minX,minY;
 
+    minX = Number.MAX_VALUE;
     minY = Number.MAX_VALUE;
-    
+
     for(var i = 0; i < selectedLayers.count(); i++) {
         var rect = selectedLayers.objectAtIndex(i).frame();
 
+        minX = Math.min(minX, rect.minX());
         minY = Math.min(minY, rect.minY());
     }
 
-    return minY;
+    return [minX,minY];
 }
 
 (function() {
@@ -26,12 +26,14 @@ function getMinY(selectedLayers) {
 
     var selectedLayers = doc.findSelectedLayers();
 
-    var minY = getMinY(selectedLayers);
+    var minX = getMinXY(selectedLayers)[0];
+    var minY = getMinXY(selectedLayers)[1];
 
     for(var i = 0; i < selectedLayers.count(); i++) {
         var layer = selectedLayers.objectAtIndex(i);
         var rect = layer.frame();
 
+        rect.x = [rect x] - minX + point.x;
         rect.y = [rect y] - minY + point.y;
     }
 })();
