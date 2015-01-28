@@ -33,7 +33,7 @@ function getMinXY(selectedLayers) {
         var layer = selectedLayers.objectAtIndex(i);
         var rect = layer.frame();
 
-        rect.x = [rect x] - minX + point.x;
-        rect.y = [rect y] - minY + point.y;
+        rect.x = rect.x - minX + point.x;
+        rect.y = rect.y - minY + point.y;
     }
 })();
